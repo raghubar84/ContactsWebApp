@@ -1,0 +1,38 @@
+<div class="container">
+    <form #form="ngForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form">
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="firsName">First Name</label>
+                    <input id="firsName" formControlName="firstName" class="form-control" placeholder="your first name"
+                        [ngClass]="{ 'is-invalid': submitted && contactForm.get('firstName')?.invalid }">
+                    <div *ngIf="submitted && contactForm.get('firstName')?.invalid" class="text-danger">
+                        <small *ngIf="contactForm.get('firstName')?.errors?.['required']">Firs Name is required.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firsName">Last Name</label>
+                    <input id="firsName" formControlName="lastName" class="form-control" placeholder="your last name"
+                        [ngClass]="{ 'is-invalid': submitted && contactForm.get('lastName')?.invalid }">
+                    <div *ngIf="submitted && contactForm.get('lastName')?.invalid" class="text-danger">
+                        <small *ngIf="contactForm.get('lastName')?.errors?.['required']">Last Name is required.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" formControlName="email" class="form-control" placeholder="your email"
+                        [ngClass]="{ 'is-invalid': submitted && contactForm.get('email')?.invalid }">
+                    <div *ngIf="submitted && contactForm.get('email')?.invalid" class="text-danger">
+                        <small *ngIf="contactForm.get('email')?.errors?.['required']">Email is required.</small>
+                        <small *ngIf="contactForm.get('email')?.errors?.['email']">Email is invalid.</small>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

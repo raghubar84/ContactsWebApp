@@ -1,0 +1,29 @@
+.add-contact {
+    padding-bottom: 5px;
+    margin: 0 0 5px 10px;
+    border-bottom: 2px #e7e7e7 solid;
+}
+
+.mat-grid {
+    background-color: #f7f7f7;
+    color: black;
+
+    .mat-mdc-header-cell,
+    .mat-mdc-cell {
+        color: black;
+        border: 1px #e7e7e7 solid;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+}
+
+
+
+.mat-paginator {
+    background-color: #f7f7f7;
+    color: black;
+    border-top: 1px #e7e7e7 solid;
+}
